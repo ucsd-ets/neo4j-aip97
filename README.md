@@ -20,15 +20,16 @@ chmod +x *.sh
    ```sh
    cd neo4j_dir_created_by_its
    ```
-4. Launch neo4j
+4. Launch neo4j wrapper script, run in background
    ```sh
-   ./launch-neo4j-agt.sh
+   ./launch-neo4j-agt.sh -b
    ```
 5. Wait for the shell output ``` pod is running with IP:XXX ``` <br/>
 6. Take first url in shell output (e.g., http://128.54.65.160:16585) and paste into your browser url. Wait for "connect to neo4j" page to load<br/>
 7. Change connect url to use the second url from the shell output (e.g., neo4j://128.54.65.160:16586)<br/>
 8. username: neo4j; password: (ask staff)<br/>
 9. press ```Connect```<br/>
+10. Additional users can access the login url by pasting that first url in shell output into their browser
 
 To terminate pod/processes
 ```sh
