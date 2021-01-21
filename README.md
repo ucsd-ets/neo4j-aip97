@@ -6,7 +6,7 @@
 git clone https://github.com/ucsd-ets/neo4j-aip97.git
 ```
 ```sh
-chmod +x launch-env-agt.sh
+chmod +x *.sh
 ```
 ```sh
 (ask staff) Set K8S_HOME_DIR variable in launch-neo4j-agt.sh
