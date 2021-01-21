@@ -36,4 +36,18 @@ exit
 ```
 <!-- USAGE EXAMPLES -->
 ## Test Connection
+### Create sample graph
 After connecting with neo4j, you should see ```Connected to Neo4j``` on your screen. To run something, select guide link in middle panel, go to second "page", scroll down to bottom panel, click in the box with "CREATE" text (will copy it to middle panel), click "play" button at top right
+
+### Import CSV from local
+```sh
+cd {root}/neo4j/import
+cp {csv_path} .
+```
+From sandbox in your browser, execute <br/>
+```sh
+LOAD CSV FROM 'file:///{csv_filename}' AS row
+RETURN count(row)
+```
+
+
