@@ -1,28 +1,18 @@
 # AIP97-neo4j-setup
 
 <!-- ABOUT THE PROJECT -->
-## Setup
-```sh
-git clone https://github.com/ucsd-ets/neo4j-aip97.git
-```
-```sh
-chmod +x *.sh
-```
-```sh
-(ask staff) Set K8S_HOME_DIR variable in launch-neo4j-agt.sh
-```
 
 <!-- GETTING STARTED -->
 ## Getting Started
-1. Log into vpn.ucsd.edu (required for accesing neo4j)<br/>
+1. Log into vpn.ucsd.edu (required for accesing neo4j sandbox)<br/>
 2. SSH to dsmlp-login.ucsd.edu
-3. Oepn neo4j_dir_created_by_its folder
+3. Find `launch-neo4j.sh` script
    ```sh
-   cd neo4j_dir_created_by_its
+   which launch-neo4j.sh
    ```
-4. Launch neo4j wrapper script, run in background
+4. Launch the `launch-neo4j.sh` script return from step 3
    ```sh
-   ./launch-neo4j-agt.sh -b
+   /software/common64/dsmlp/bin/launch-neo4j.sh
    ```
 5. Wait for the shell output ``` pod is running with IP:XXX ``` <br/>
 6. Take first url in shell output (e.g., http://128.54.65.160:16585) and paste into your browser url. Wait for "connect to neo4j" page to load<br/>
@@ -35,6 +25,12 @@ To terminate pod/processes
 ```sh
 exit
 ```
+
+<!-- NOTES ON SHARING DB -->
+## Sharing Database between Users
+Each user on dsmlp-login has permission to launch their own neo4j database by following the steps aboving (executing `launch-neo4j.sh`).
+If multiple users want to work on a shared database, one user in the group can launch neo4j and provide both urls from that luanch to other users in the group in order for them to access the same database.
+
 <!-- USAGE EXAMPLES -->
 ## Test Connection
 ### Create sample graph
@@ -50,5 +46,6 @@ From sandbox in your browser, execute <br/>
 LOAD CSV FROM 'file:///{csv_filename}' AS row
 RETURN count(row)
 ```
+
 
 
