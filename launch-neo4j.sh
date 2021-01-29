@@ -16,9 +16,8 @@ NEO4J_AUTH="neo4j/test"
 
 POD_NAME="neo4j"
 
-# FIXME - this should be set by "kubevars" above
-# remove this line once available
-K8S_HOME_DIR=
+# Create neo4j directory structuyre if it doesn't already exist
+mkdir -p -m 0700 ${K8S_HOME_DIR}/neo4j/{logs,data,import}
 
 K8S_EXTRA_ENV=$(cat <<-EOM
     - name: NEO4J_AUTH
@@ -37,4 +36,4 @@ PROXY_PORT=7474:7687
 K8S_ENTRYPOINT="/docker-entrypoint.sh"
 K8S_ENTRYPOINT_ARGS_EXPANDED="neo4j"
 
-exec ./launch-env-agt.sh -S "$@"
+exec launch-env.sh -S "$@"
