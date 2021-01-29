@@ -11,7 +11,7 @@ K8S_GB_MEM=8 # max of 64 ("")
 
 # Controls whether an interactive Bash shell is started
 SPAWN_INTERACTIVE_SHELL=YES
-K8S_DOCKER_IMAGE="neo4j:latest"
+K8S_DOCKER_IMAGE="neo4j:4.2"
 NEO4J_AUTH="neo4j/test"
 
 POD_NAME="neo4j"
